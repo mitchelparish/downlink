@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "secret" #change later, see what impacts changes might have?
+    set :session_secret, "secret" # change later, see what impacts changes might have?
   end
 
   get '/' do
@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
     #   end
     end
 
-    def logged_in?
+    def logged_in?         # look at fwitter example, !!current_user
       !!session[:user_id]
     end
 
@@ -28,4 +28,3 @@ class ApplicationController < Sinatra::Base
       User.find(session[:user_id])
     end
   end
-end
