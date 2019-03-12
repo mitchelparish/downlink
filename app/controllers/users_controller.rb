@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if params[:username] == "" || params[:email] == "" || params[:password] == ""
+    if params[:username] == "" || params[:password] == ""
       redirect to '/signup'
     else
       @user = User.new(:username => params[:username], :password => params[:password])
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
     get '/login' do
       if !logged_in?
-        erb :'users/login'
+        erb :'login'
       else
         redirect '/users/show'
       end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
         session.destroy
         redirect to '/login'
       else
-        redirect to '/'
+        redirect to '/index'
       end
     end
   end
