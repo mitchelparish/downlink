@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
     #   if !logged_in?
     #     redirect "/login?error=You have to be logged in to do that"
     #   end
-    end
+
 
     def logged_in?         # look at fwitter example, !!current_user
       !!session[:user_id]
@@ -28,3 +28,4 @@ class ApplicationController < Sinatra::Base
       User.find(session[:user_id])
     end
   end
+end 

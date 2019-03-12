@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   #    erb :'users/show'
   #  end
 
-
   get '/signup' do
     if !logged_in?
       erb :'users/signup'
@@ -27,7 +26,7 @@ class UsersController < ApplicationController
 
     get '/login' do
       if !logged_in?
-        erb :'login'
+        erb :'users/login'
       else
         redirect '/users/show'
       end
@@ -39,16 +38,16 @@ class UsersController < ApplicationController
         session[:user_id] = user.id
         redirect "/users/show"
       else
-        redirect to '/signup'
+        redirect to 'users/signup'
       end
     end
 
     get '/logout' do
       if logged_in?
         session.destroy
-        redirect to '/login'
+        erb :index
       else
-        redirect to '/index'
+        erb :index
       end
     end
   end
