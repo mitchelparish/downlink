@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   #    erb :'users/show'
   #  end
 
+   get '/users/show' do
+     erb :'users/show' # needs @user variable set
+   end
+
+
   get '/signup' do
     if !logged_in?
       erb :'users/signup'
