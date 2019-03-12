@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  # get '/users/:slug' do         # Can this go somewhere else in the flow?
+  #    @user = User.find_by_slug(params[:slug])
+  #    erb :'users/show'
+  #  end
+
+
   get '/signup' do
     if !logged_in?
       erb :'users/signup'
