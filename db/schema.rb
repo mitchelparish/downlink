@@ -11,11 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190312203216) do
+ActiveRecord::Schema.define(version: 20190313180227) do
 
   create_table "downlinks", force: :cascade do |t|
-    t.string "title"
-    t.string "message"
+    t.string   "title"
+    t.string   "message"
+    t.integer  "signal_strength"
+    t.integer  "user_id"
+    t.datetime "created_at"
   end
 
   create_table "users", force: :cascade do |t|
