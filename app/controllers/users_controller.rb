@@ -1,10 +1,5 @@
 class UsersController < ApplicationController
 
-  # get '/users/:slug' do         # Can this go somewhere else in the flow?
-  #    @user = User.find_by_slug(params[:slug])
-  #    erb :'users/show'
-  #  end
-
   get '/users/:slug' do
     @user = User.find_by_slug(params[:slug])
     if logged_in? && current_user.id == @user.id
@@ -41,22 +36,22 @@ class UsersController < ApplicationController
       end
     end
 
-    post '/login' do
-      user = User.find_by(:username => params[:username])
-      if user && user.authenticate(params[:password])
-        session[:user_id] = user.id
-        redirect "/users/#{current_user.slug}"
-      else
-        redirect to '/login'
-      end
-    end
-
-    get '/logout' do
-      if logged_in?
-        session.destroy
-        erb :index
-      else
-        erb :index
-      end
+  post '/login' do
+    user = User.find_by(:username => params[:username])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect "/users/#{current_user.slug}"
+    else
+      redirect to '/login'
     end
   end
+
+  get '/logout' do
+    if logged_in?
+      session.destroy
+      erb :index
+    else
+      erb :index
+    end
+  end
+end
