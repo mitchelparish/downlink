@@ -9,22 +9,12 @@ class UsersController < ApplicationController
     @user = User.find_by_slug(params[:slug])
     erb :'users/show' # needs @user variable set
    end
-   # 
-   # get '/users/show' do
-   #   if logged_in?
-   #
-   #     erb :'users/show'
-   #   else
-   #     redirect to '/login'
-   #   end
-   # end
-
 
   get '/signup' do
     if !logged_in?
       erb :'users/signup'
     else
-      redirect to 'users/show'
+      redirect to "/users/#{current_user.slug}"
     end
   end
 
@@ -35,7 +25,7 @@ class UsersController < ApplicationController
       @user = User.new(:username => params[:username], :password => params[:password])
       @user.save
         session[:user_id] = @user.id
-        redirect to '/users/show'
+        redirect to "/users/#{current_user.slug}"
       end
     end
 
@@ -43,7 +33,7 @@ class UsersController < ApplicationController
       if !logged_in?
         erb :'users/login'
       else
-        redirect '/users/show'
+        redirect "/users/#{current_user.slug}"
       end
     end
 
@@ -51,7 +41,7 @@ class UsersController < ApplicationController
       user = User.find_by(:username => params[:username])
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect '/users/show'
+        redirect "/users/#{current_user.slug}"
       else
         redirect to '/login'
       end
