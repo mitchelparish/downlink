@@ -5,8 +5,9 @@ class UsersController < ApplicationController
   #    erb :'users/show'
   #  end
 
-  get '/users/show' do
-     erb :'users/show' # needs @user variable set
+  get '/users/:slug' do
+    @user = User.find_by_slug(params[:slug])
+    erb :'users/show' # needs @user variable set
    end
 
 
