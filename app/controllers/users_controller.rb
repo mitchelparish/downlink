@@ -9,6 +9,15 @@ class UsersController < ApplicationController
     @user = User.find_by_slug(params[:slug])
     erb :'users/show' # needs @user variable set
    end
+   # 
+   # get '/users/show' do
+   #   if logged_in?
+   #
+   #     erb :'users/show'
+   #   else
+   #     redirect to '/login'
+   #   end
+   # end
 
 
   get '/signup' do
