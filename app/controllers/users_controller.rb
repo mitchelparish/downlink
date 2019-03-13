@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   #    erb :'users/show'
   #  end
 
-   get '/users/show' do
+  get 'users/show' do
      erb :'users/show' # needs @user variable set
    end
 
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       end
     end
 
-    get '/login' do
+  get '/login' do
       if !logged_in?
         erb :'users/login'
       else
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
         session[:user_id] = user.id
         redirect "/users/show"
       else
-        redirect to 'users/signup'
+        redirect to '/login'
       end
     end
 
