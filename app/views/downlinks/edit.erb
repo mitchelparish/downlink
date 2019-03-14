@@ -11,7 +11,9 @@
       singal strength: <input type="number" name="signal_strength" min="1" max="100" value="<%= @downlink.signal_strength%>" required><br>
       message to transmit: <input type="textarea" name="message" value="<%= @downlink.message%>" required><br><br>
       <input type="submit">
-      </form>
+      </form><br>
+
+      <a href="/downlinks/<%= @downlink.id %>">Abort</a>
 
 
 </html>

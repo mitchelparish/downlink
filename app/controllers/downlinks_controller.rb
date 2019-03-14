@@ -47,7 +47,7 @@ class DownlinksController < ApplicationController
       if @downlink && @downlink.user == current_user
         erb :'downlinks/edit'
       else
-        redirect to '/users/#{current_user.slug}'
+        redirect to "/users/#{current_user.slug}"
       end
     else
       redirect to '/login'
