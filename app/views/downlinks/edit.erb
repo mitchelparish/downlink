@@ -5,7 +5,12 @@
   </head>
   <body>
     <h2>EDIT downlinks</h2>
-
+    <form action="/downlinks/new" method="POST">
+      transmission title: <input type="text" name="title" value="<%= @downlink.title%>" required><br>
+      singal strength: <input type="number" name="signal_strength" min="1" max="100" value="<%= @downlink.signal_strength%>" required><br>
+      message to transmit: <input type="textarea" name="message" value="<%= @downlink.message%>" required><br><br>
+      <input type="submit">
+      </form>
 
 
 </html>
