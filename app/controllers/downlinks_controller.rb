@@ -81,7 +81,7 @@ class DownlinksController < ApplicationController
   #     if @downlink && @downlink.user == current_user
   #       @downlink.delete
   #     end
-  #     redirect to '/users/show'
+  #     redirect to "/users/#{current_user.slug}"
   #   else
   #     redirect to '/login'
   #   end

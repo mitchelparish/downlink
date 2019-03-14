@@ -4,7 +4,17 @@
     <title>Downlink established.</title>
   </head>
   <body>
-    <h2>Display single downlink!</h2>
+    <h2>Downlink established.</h2>
+
+    Transmission Title: <%=@downlink.title%><br>
+    Signal Strength: <%=@downlink.signal_strength%>%<br><br>
+    Message: <%=@downlink.message%><br><br>
+
+
+    <a href="/downlinks/edit">Edit</a> |
+    <a href="/delete">Delete</a>
+
+
 
 
 

@@ -20,7 +20,7 @@ class DownlinksController < ApplicationController
     post '/downlinks/new' do
       if logged_in?
         if params[:content] == ""
-          redirect to "/tweets/new"
+          redirect to "/downlinks/new"
         else
           @downlink = current_user.downlinks.build(content: params[:content])
           if @downlink.save
