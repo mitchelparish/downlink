@@ -26,7 +26,7 @@ class DownlinksController < ApplicationController
       @downlink = Downlink.create(title: params[:title], signal_strength: params[:signal_strength], message: params[:message])
       @downlink.user = current_user
       @downlink.save
-        redirect to "/downlinks/#{@downlink.id}" 
+        redirect to "/downlinks/#{@downlink.id}"
     else
       redirect to "/login"
     end
@@ -47,7 +47,7 @@ class DownlinksController < ApplicationController
       if @downlink && @downlink.user == current_user
         erb :'downlinks/edit'
       else
-        redirect to '/users/show'
+        redirect to '/users/#{current_user.slug}'
       end
     else
       redirect to '/login'
@@ -72,7 +72,7 @@ class DownlinksController < ApplicationController
       if current_user.id == @downlink.user_id
         @downlink.delete
       end
-      redirect to '/users/show'
+      redirect to "/users/#{current_user.slug}"
     else
       redirect to '/login'
     end
