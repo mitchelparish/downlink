@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
     #   end
 
 
-    def logged_in?         # look at fwitter example, !!current_user
+    def logged_in?         
       !!session[:user_id]
     end
 
@@ -28,4 +28,4 @@ class ApplicationController < Sinatra::Base
       User.find(session[:user_id])
     end
   end
-end 
+end
