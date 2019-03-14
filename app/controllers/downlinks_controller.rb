@@ -26,7 +26,7 @@ class DownlinksController < ApplicationController
       @downlink = Downlink.create(title: params[:title], signal_strength: params[:signal_strength], message: params[:message])
       @downlink.user = current_user
       @downlink.save
-        redirect to "/downlinks/#{@downlink.id}" #erb?
+        redirect to "/downlinks/#{@downlink.id}" 
     else
       redirect to "/login"
     end
@@ -54,26 +54,17 @@ class DownlinksController < ApplicationController
     end
   end
 
-  # patch '/downlinks/:id' do
-  #   if logged_in?
-  #     if params[:content] == "" # or || any other param empty
-  #       redirect to "/downlinks/#{params[:id]}/edit"
-  #     else
-  #       @downlink = Downlink.find_by_id(params[:id])
-  #       if @downlink && @downlink.user == current_user
-  #         if @downlink.update(content: params[:content])
-  #           redirect to "/downlinks/#{@downlink.id}"
-  #         else
-  #           redirect to "/downlinks/#{@downlink.id}/edit"
-  #         end
-  #       else
-  #         redirect to '/users/show'
-  #       end
-  #     end
-  #   else
-  #     redirect to '/login'
-  #   end
-  # end
+  patch '/downlinks/:id' do
+    # if logged_in?
+      # if params[:content] == "" # or || any other param empty
+      #   redirect to "/downlinks/#{params[:id]}/edit"
+      # else
+    @downlink = Downlink.find_by_id(params[:id])
+    @downlink.update(title: params[:title], signal_strength: params[:signal_strength],
+      message: params[:message])
+    @downlink.save
+    redirect to "/downlinks/#{@downlink.id}"
+  end
 
   delete '/downlinks/:id/delete' do
     if logged_in?
