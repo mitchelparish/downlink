@@ -1,0 +1,112 @@
+html, body {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url("../images/splash.jpg");
+  background-size: cover;
+}
+
+/* h1 {
+  color: white;
+  font-family: "OCR A Std";
+  font-size: 2.4rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-align: center;
+  opacity: .76;
+} */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+
+}
+
+.button {
+  color: white;
+  font-family: "Baloo";
+  font-size: .9rem;
+  letter-spacing: 2px;
+  background-color: rgba(59, 50, 67, 1);
+  border-radius: 40px;
+  padding: 1.4rem 2rem;
+  opacity: .76;
+  margin-top: 2rem;
+  display: block;
+}
+
+
+.form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "OCR A Std";
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form input, label {
+  opacity: .76;
+}
+
+input[type=text], input[type=password] {
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+  color: white;
+  font-family: "Baloo";
+  border: none;
+  font-size: .9rem;
+  letter-spacing: 2px;
+  background-color: rgba(59, 50, 67, 1);
+  border-radius: 40px;
+  padding: 1.4rem 2rem;
+  opacity: .76;
+  cursor: pointer;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  font-size: .75rem;
+  height: auto;
+}
+
+a {
+  font-family: "Baloo";
+  color: white;
+  text-decoration: none;
+  padding: 2rem;
+}
+
+#flash {
+  font-size: .60rem;
+  margin-bottom: 2rem;
+}
