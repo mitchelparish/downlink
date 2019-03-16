@@ -1,25 +1,19 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Downlink established.</title>
   </head>
   <body>
+    <h1>Downlink established for:</h1>
+    <h2><%= @user.username %></h2>
 
+    <a href="/downlinks/new">Transmit New Message</a><br>
+    <a href="/logout">Logout</a><br><br>
 
-
-<h1>Downlink established for:</h1>
-<h2><%= @user.username %></h2>
-
-<a href="/downlinks/new">Transmit New Message</a><br>
-<a href="/logout">Logout</a><br><br>
-
-<%@user.downlinks.each do |downlink|%>
-<a href="/downlinks/<%=downlink.id%>"><%=downlink.title%><br>
-       <%end%>
-
-
-
-
-
-
+    <%@user.downlinks.each do |downlink|%>
+    <a href="/downlinks/<%=downlink.id%>"><%=downlink.title%><br>
+           <%end%>
 </html>

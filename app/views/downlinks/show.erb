@@ -1,14 +1,17 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Downlink established.</title>
   </head>
   <body>
     <h2>Downlink established.</h2>
 
-    Transmission Title: <%=@downlink.title%><br>
-    Signal Strength: <%=@downlink.signal_strength%>%<br><br>
-    Message: <%=@downlink.message%><br><br>
+    <h3>Transmission Title: <%=@downlink.title%></h3><br>
+    <h3>Signal Strength: <%=@downlink.signal_strength%>%</h3><br><br>
+    <h3>Message: <%=@downlink.message%></h3><br><br>
 
 
     <% if logged_in? && current_user.id == @downlink.user_id %>
