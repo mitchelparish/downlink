@@ -9,9 +9,10 @@
   <body>
     <div class="main">
       <div class="sub">
-        <h1>Downlink established for:</h1>
-        <h2><%= @user.username %></h2>
-        <a href="/downlinks/new">Transmit New Message</a><br>
+        <h2>Downlink successfully established for:</h2>
+        <h1><%= @user.username %></h1>
+        <%=Time.now%>
+        <a href="/downlinks/new">Transmit New Message</a>
         <a href="/logout">Logout</a><br>
         <h3>Messages Received:</h3>
         <%@user.downlinks.each do |downlink|%>
