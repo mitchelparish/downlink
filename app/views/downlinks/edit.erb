@@ -7,16 +7,19 @@
     <title>Downlink established.</title>
   </head>
   <body>
-    <h2>EDIT downlinks</h2>
-    <form action="/downlinks/<%= @downlink.id %>" method="POST">
-      <input type="hidden" name="_method" value="patch">
-      transmission title: <input type="text" name="title" value="<%= @downlink.title%>" required><br>
-      singal strength: <input type="number" name="signal_strength" min="1" max="100" value="<%= @downlink.signal_strength%>" required><br>
-      message to transmit: <input type="textarea" name="message" value="<%= @downlink.message%>" required><br><br>
-      <input type="submit">
-      </form><br>
-
-      <a href="/downlinks/<%= @downlink.id %>">Abort</a>
-
-
+    <div class="main">
+      <div class="sub">
+        <h2>Edit downlink for re-transmission.</h2><br><br>
+        <form action="/downlinks/<%= @downlink.id %>" method="POST">
+          <input type="hidden" name="_method" value="patch">
+          <input type="text" name="title" value="<%= @downlink.title%>" required>   Singal Strength: <input type="number" name="signal_strength" min="1" max="100" value="<%= @downlink.signal_strength%>" required><br>
+          <br>
+          Message:<br>
+          <textarea name="message" cols=50 rows=5 value="<%= @downlink.message%>" required></textarea><br>
+          <input type="submit">
+          </form><br>
+          <a href="/downlinks/<%= @downlink.id %>">Abort</a>
+      </div>
+    </div>
+  </body>
 </html>

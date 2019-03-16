@@ -7,18 +7,18 @@
     <title>Downlink established.</title>
   </head>
   <body>
-    <h2>Create a new downlink:</h2><br>
-    <form action="/downlinks/new" method="POST">
-      Transmission: <input type="text" name="title" placeholder="Transmission Title" required><br>
-      Singal Strength: <input type="number" name="signal_strength" min="1" max="100" required><br>
-      Message:<br>
-      <textarea name="message" cols=50 rows=5 required></textarea><br>
-
-      <input type="submit">
-      </form><br>
-
-    <a href="/users/<%=current_user.slug%>">Abort</a>
-
-
+    <div class="main">
+      <div class="sub">
+        <h2>Create a new downlink.</h2><br><br>
+        <form action="/downlinks/new" method="POST">
+        <input type="text" name="title" placeholder="Transmission Title" required> Singal Strength: <input type="number" name="signal_strength" min="1" max="100" placeholder="%" required><br>
+        <br>
+        Message:<br>
+        <textarea name="message" cols=50 rows=5 required></textarea><br>
+        <input type="submit">
+        </form><br>
+        <a href="/users/<%=current_user.slug%>">Abort</a>
+      </div>
+    </div>
   </body>
 </html>
