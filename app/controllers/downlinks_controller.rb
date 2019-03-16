@@ -1,18 +1,5 @@
 class DownlinksController < ApplicationController
 
-#   get '/downlinks/new' do
-#       erb :"downlinks/new"
-#     end
-# end
-  # get '/downlinks/show' do
-  #   if logged_in?
-  #     @downlinks = Downlink.all
-  #     erb :'downlinks/show'
-  #   else
-  #     redirect to '/login'
-  #   end
-  # end
-
   get '/downlinks/new' do
     if logged_in?
       erb :'downlinks/new'
@@ -55,10 +42,6 @@ class DownlinksController < ApplicationController
   end
 
   patch '/downlinks/:id' do
-    # if logged_in?
-      # if params[:content] == "" # or || any other param empty
-      #   redirect to "/downlinks/#{params[:id]}/edit"
-      # else
     @downlink = Downlink.find_by_id(params[:id])
     @downlink.update(title: params[:title], signal_strength: params[:signal_strength],
       message: params[:message])
