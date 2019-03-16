@@ -7,13 +7,17 @@
     <title>Downlink established.</title>
   </head>
   <body>
-    <h1>Downlink established for:</h1>
-    <h2><%= @user.username %></h2>
-
-    <a href="/downlinks/new">Transmit New Message</a><br>
-    <a href="/logout">Logout</a><br>
-    <h3>Messages Received:</h3>
-    <%@user.downlinks.each do |downlink|%>
-    <a href="/downlinks/<%=downlink.id%>"><%=downlink.created_at.strftime("%Y-%jT%RZ")%><br>
-           <%end%>
+    <div class="main">
+      <div class="sub">
+        <h1>Downlink established for:</h1>
+        <h2><%= @user.username %></h2>
+        <a href="/downlinks/new">Transmit New Message</a><br>
+        <a href="/logout">Logout</a><br>
+        <h3>Messages Received:</h3>
+        <%@user.downlinks.each do |downlink|%>
+        <a href="/downlinks/<%=downlink.id%>"><%=downlink.created_at.strftime("%Y-%jT%RZ")%><br>
+        <%end%>
+      </div>
+    </div>
+  </body>
 </html>

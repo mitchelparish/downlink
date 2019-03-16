@@ -25,8 +25,8 @@ body {
   flex-direction: column;
   justify-content: safe center;
   align-items: safe center;
-  background-color: rgba(59, 50, 67, 1);
-  width: 80%;
+  background-color: rgb(166, 166, 166);
+  width: 55%;
   height: 80%;
   opacity: .6;
 }
