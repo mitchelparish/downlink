@@ -1,36 +1,57 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Establishing downlink...</title>
-  </head>
-  <body>
-    <h2>Login to establish your downlink:</h2>
-    <form action="/login" method="POST">
-      <input type="text" name="username" placeholder="Username">
-      <input type="password" name="password" placeholder="Password">
-      <input type="submit">
-      </form>
+class UsersController < ApplicationController
 
+  get '/users/:slug' do
+    @user = User.find_by_slug(params[:slug])
+    if logged_in? && current_user.id == @user.id
+      erb :'users/show'
+    else
+      redirect to "/"
+    end
+  end
 
-</html>
+  get '/signup' do
+    if !logged_in?
+      erb :'users/signup'
+    else
+      redirect to "/users/#{current_user.slug}"
+    end
+  end
 
+  post '/signup' do
+    if params[:username] == "" || params[:password] == ""
+      redirect to '/signup'
+    else
+      @user = User.new(:username => params[:username], :password => params[:password])
+      @user.save
+        session[:user_id] = @user.id
+        redirect to "/users/#{current_user.slug}"
+      end
+    end
 
-<!doctype html>
-<html>
-  <head>
-    <title>Establishing downlink...</title>
-  </head>
-  <body>
-    <h1>Welcome to downlink.</h1>
+  get '/login' do
+      if !logged_in?
+        erb :'users/login'
+      else
+        redirect "/users/#{current_user.slug}"
+      end
+    end
 
-      <a href="/signup">Create Account</a> |
+  post '/login' do
+    user = User.find_by(:username => params[:username])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect to "/users/#{current_user.slug}"
+    else
+      redirect to '/login'
+    end
+  end
 
-      <% if logged_in? %>
-        <a href="/users/<%=current_user.slug%>">Control Panel</a> |
-        <a href="/logout">Logout</a>
-      <% else %>
-        <a href="/login">Sign In</a>
-      <% end %>
-
-
-</html>
+  get '/logout' do
+    if logged_in?
+      session.destroy
+      erb :index
+    else
+      erb :index
+    end
+  end
+end
