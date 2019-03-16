@@ -2,22 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
     <title>Establishing downlink...</title>
   </head>
   <body>
     <div class="main">
-
-        <h1>Establishing downlink...</h1>
-        <a href="/signup"><span class="button">Create an account</span></a> |
-        <% if logged_in? %>
-        <a href="/users/<%=current_user.slug%>"><span class="button">Control Panel</span></a> | 
-        <a href="/logout"><span class="button">Logout</span></a>
-        <% else %>
-        <a href="/login"><span class="button">Sign In</span></a>
-        <% end %>
-      </div>
-
+      <h1>Establishing downlink...</h1><br>
+      <p><a href="/signup">Create an account</p>
+      <% if logged_in? %>
+      <p><a href="/users/<%=current_user.slug%>">Control Panel</p>
+      <p><a href="/logout">Logout</p>
+      <% else %>
+      <p><a href="/login">Sign In</p>
+      <% end %>
+    </div>
   </body>
 </html>

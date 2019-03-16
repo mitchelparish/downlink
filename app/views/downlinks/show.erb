@@ -7,11 +7,12 @@
     <title>Downlink established.</title>
   </head>
   <body>
-    <h2>Downlink established.</h2>
-
-    <h3>Transmission Title: <%=@downlink.title%></h3><br>
-    <h3>Signal Strength: <%=@downlink.signal_strength%>%</h3><br><br>
-    <h3>Message: <%=@downlink.message%></h3><br><br>
+    <h2>Transmission Received.</h2><br>
+    <h3><%=@downlink.title%></h3>
+    System User: <%=@downlink.user_id%>00090014<br>
+    Transmission ID: <%=@downlink.created_at.strftime("%Y-%jT%RZ")%><br>
+    Signal Strength: <%=@downlink.signal_strength%>%<br><br>
+    Message:<br><%=@downlink.message%><br><br>
 
 
     <% if logged_in? && current_user.id == @downlink.user_id %>
