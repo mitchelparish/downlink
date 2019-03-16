@@ -32,11 +32,11 @@ body {
 }
 
 p {
-  color: white;
+  color: black;
 }
 
 h1 {
-  color: FFFFFF;
+  color: white;
   font-size: 2.4rem;
   font-weight: 100;
   letter-spacing: 1px;
