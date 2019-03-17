@@ -12,14 +12,12 @@
         <h2>Create a new downlink.</h2>
         <%=Time.now%><br><br>
         <form action="/downlinks/new" method="POST">
-        <input type="text" name="title" size="29" placeholder="Transmission Title" required> Singal Strength: <input type="number" name="signal_strength" min="1" max="100" placeholder="%" required><br>
-        <br>
-        <textarea name="message" cols=50 rows=10 placeholder="Message to transmit" required></textarea><br>
-
-            <input type="submit">
-
+          <input type="text" name="title" size="29" placeholder="Transmission Title" required> Singal Strength: <input type="number" name="signal_strength" min="1" max="100" placeholder="%" required><br>
+          <br>
+          <textarea name="message" cols=50 rows=10 placeholder="Message to transmit" required></textarea><br>
+          <input type="submit">
+          <a href="/users/<%=current_user.slug%>">Abort</a>
         </form>
-        <a href="/users/<%=current_user.slug%>">Abort</a>
       </div>
     </div>
   </body>
