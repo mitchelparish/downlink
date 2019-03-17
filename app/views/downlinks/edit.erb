@@ -16,7 +16,7 @@
           <input type="text" name="title" size="29" value="<%= @downlink.title%>" required>
           Singal Strength: <input type="number" name="signal_strength" min="1" max="100" value="<%= @downlink.signal_strength%>" required>
           <br><br>
-          <textarea name="message" cols=50 rows=10 maxlength="621" value="<%= @downlink.message%>" required></textarea><br>
+          <textarea name="message" cols=50 rows=10 maxlength="621" required><%= @downlink.message%></textarea><br>
           <input type="submit">
           <a href="/downlinks/<%= @downlink.id %>">Abort</a>
         </form>
