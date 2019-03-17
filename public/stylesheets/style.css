@@ -30,6 +30,17 @@ body {
   opacity: .7;
 }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  align-items: safe center;
+  background-color: rgb(166, 166, 166);
+  width: 55%;
+  height: 60%;
+  opacity: .7;
+}
+
 .downlink {
   width: 500px;
   margin: auto;
