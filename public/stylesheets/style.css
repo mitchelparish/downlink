@@ -31,6 +31,17 @@ body {
   opacity: .7;
 }
 
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+}
+
+
 p {
   color: black;
 }
@@ -42,4 +53,34 @@ h1 {
   letter-spacing: 1px;
   text-align: center;
   opacity: .78;
+}
+
+.form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+form input, label {
+  opacity: .70;
+}
+
+input[type=text], input[type=password] {
+    border: 2px solid white;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+  color: white;
+  border: none;
+  font-size: .9rem;
+  letter-spacing: 2px;
+  background-color: rgb(166, 166, 166);
+  border-radius: 40px;
+  padding: .5rem 1.2rem;
+  opacity: .76;
+  cursor: pointer;
 }
