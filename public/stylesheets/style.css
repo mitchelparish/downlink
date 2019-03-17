@@ -38,9 +38,7 @@ body {
   align-items: center;
   height: 100%;
   width: 100%;
-
 }
-
 
 p {
   color: black;
@@ -68,7 +66,13 @@ form input, label {
   opacity: .70;
 }
 
-input[type=text], input[type=password] {
+textarea {
+  border: 2px solid white;
+  border-radius: 4px;
+  resize: none;
+}
+
+input[type=text], input[type=password], input[type=number] {
     border: 2px solid white;
     border-radius: 4px;
 }
@@ -80,7 +84,7 @@ input[type=submit] {
   letter-spacing: 2px;
   background-color: rgb(166, 166, 166);
   border-radius: 40px;
-  padding: .5rem 1.2rem;
+  padding: .3rem .8rem;
   opacity: .76;
   cursor: pointer;
 }
