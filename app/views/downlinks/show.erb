@@ -9,19 +9,20 @@
   <body>
     <div class="main">
       <div class="sub">
-        <h2>Transmission Received.</h2><b>
-        <h1><%=@downlink.title%></h1><br>
+        <br><h1><%=@downlink.title%></h1>
         System User: <%=@downlink.user_id%>00090014<br>
         Transmission ID: <%=@downlink.created_at.strftime("%Y-%jT%RZ")%><br>
-        Signal Strength: <%=@downlink.signal_strength%>%<br><br>
-        Message:<br><%=@downlink.message%><br><br>
+        Signal Strength: <%=@downlink.signal_strength%>%<br>
+        <div class="downlink">
+          <%=@downlink.message%>
+        </div>
         <% if logged_in? && current_user.id == @downlink.user_id %>
-        <a href="/downlinks/<%= @downlink.id %>/edit">Edit Message</a> |
-        <a href="/users/<%=current_user.slug%>">Control Panel</a><br><br>
+        <a href="/downlinks/<%= @downlink.id %>/edit">Edit Message</a>
+        <a href="/users/<%=current_user.slug%>">Control Panel</a>
 
         <form method="post" action="/downlinks/<%=@downlink.id%>/delete">
-        <input id="hidden" type="hidden" name="_method" value="delete">
-        <input type="submit" value="Delete Message">
+          <input id="hidden" type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete Message">
         </form>
         <% end %>
       </div>

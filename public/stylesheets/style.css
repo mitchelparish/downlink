@@ -17,7 +17,6 @@ body {
   align-items: center;
   height: 100%;
   width: 100%;
-
 }
 
 .sub {
@@ -29,6 +28,11 @@ body {
   width: 55%;
   height: 80%;
   opacity: .7;
+}
+
+.downlink {
+  width: 500px;
+  margin: auto;
 }
 
 .button {

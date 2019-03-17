@@ -9,17 +9,17 @@
   <body>
     <div class="main">
       <div class="sub">
-        <h2>Edit downlink for re-transmission.</h2><br><br>
+        <h2>Edit downlink for re-transmission.</h2>
+        Transmission ID: <%=@downlink.created_at.strftime("%Y-%jT%RZ")%><br><br>
         <form action="/downlinks/<%= @downlink.id %>" method="POST">
           <input type="hidden" name="_method" value="patch">
-          <input type="text" name="title" value="<%= @downlink.title%>" required>   Singal Strength: <input type="number" name="signal_strength" min="1" max="100" value="<%= @downlink.signal_strength%>" required><br>
-          <br>
-          Message:<br>
-          <textarea name="message" cols=50 rows=10 value="<%= @downlink.message%>" required></textarea><br>
+          <input type="text" name="title" size="29" value="<%= @downlink.title%>" required>
+          Singal Strength: <input type="number" name="signal_strength" min="1" max="100" value="<%= @downlink.signal_strength%>" required>
+          <br><br>
+          <textarea name="message" cols=50 rows=10 maxlength="621" value="<%= @downlink.message%>" required></textarea><br>
           <input type="submit">
           <a href="/downlinks/<%= @downlink.id %>">Abort</a>
-          </form>
-
+        </form>
       </div>
     </div>
   </body>
