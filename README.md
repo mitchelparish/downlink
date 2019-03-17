@@ -6,7 +6,7 @@ Downlink is meant to be a short-form journal. Quickly record thoughts, feelings,
 
 ## Getting Started
 
-To run a local version of downlink clone the repo and run `bundle install`.  Use `shotgun` to initialize a server, the app will then be available to you on `localhost:9393`.
+To run a local version of downlink clone the repo and run `bundle install`. `rake db:migrate` to create a local database and then use `shotgun` to initialize a server, the app will then be available to you on `localhost:9393`.
 
 ## Contributing
 

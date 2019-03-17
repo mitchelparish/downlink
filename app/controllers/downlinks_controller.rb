@@ -15,7 +15,7 @@ class DownlinksController < ApplicationController
       @downlink.save
         redirect to "/downlinks/#{@downlink.id}"
     else
-      redirect to "/login"
+      redirect to '/login'
     end
   end
 
