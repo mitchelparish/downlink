@@ -1,6 +1,8 @@
 # Establishing downlink...
 
-Summary of downlink.
+Downlink is based on the widely accepted idea that keeping track of your thoughts and emotions is an effective means of managing your overall mental health. Getting these feelings out of your head and down into words will help you prioritize problems or fears - tracking these issues day-to-day allows you to better identify and control behaviors and triggers.
+
+Downlink is meant to be a short-form journal. Quickly record thoughts, feelings, or emotions. Set your signal strength to match your overall mood.
 
 ## Getting Started
 
