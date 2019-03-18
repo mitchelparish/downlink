@@ -49,9 +49,9 @@ class UsersController < ApplicationController
   get '/logout' do
     if logged_in?
       session.destroy
-      erb :index
+      erb :'index'
     else
-      erb :index
+      erb :'index'
     end
   end
 end
