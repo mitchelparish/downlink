@@ -22,7 +22,11 @@ class DownlinksController < ApplicationController
   get '/downlinks/:id' do
     if logged_in?
       @downlink = Downlink.find_by_id(params[:id])
-      erb :'downlinks/show'
+      if @downlink && @downlink.user == current_user
+        erb :'downlinks/show'
+      else
+        redirect to "/users/#{current_user.slug}"
+      end
     else
       redirect to '/login'
     end

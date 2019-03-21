@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   get '/users/:slug' do
-    @user = User.find_by_slug(params[:slug])
-    if logged_in? && current_user.id == @user.id
+    # @user = User.find_by_slug(params[:slug])
+    if logged_in? && current_user.id == current_user.id
       erb :'users/show'
     else
       redirect to '/'
